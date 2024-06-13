@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Bank";
+}
+
+<h2>Bank</h2>
+
+<p>Your @ViewBag.SavingsAccountType account balance is: @ViewBag.SavingsBalance</p>
+<p>Your @ViewBag.CheckingAccountType account balance is: @ViewBag.CheckingBalance</p>
+
+@if (ViewBag.Accounts != null)
+{
+    <h3>Accounts</h3>
+    <ul>
+        @foreach (var account in ViewBag.Accounts)
+        {
+            <li>@account.AccountType account with balance @account.Balance</li>
+        }
+    </ul>
+}
